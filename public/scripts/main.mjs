@@ -1,6 +1,6 @@
-import {projectNavUtil} from '../../modules/projectNavUtil.mjs';
+import {projectNav} from '../../modules/projectNavUtil.mjs';
 function initProjectNav() {
-    const projectNav = new projectNavUtil();
+   
     const projectInstanceElements = document.querySelectorAll('.project[data-project-details]');
     projectInstanceElements.forEach((item) => {
         let project = projectNavUtil.projectFromElement(item);
@@ -11,7 +11,4 @@ function initProjectNav() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    window.projectNav = initProjectNav();
-    const projectNav = window.projectNav;
-    console.log(projectNav.catalog);
 });
