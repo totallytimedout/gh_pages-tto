@@ -1,0 +1,15 @@
+{
+  "name": "tto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitkraken.dev/link/dnNjb2RlOi8vZWFtb2Rpby5naXRsZW5zL2xpbmsvci9hNDQwYTUxZGY4ODA2ZjdhY2IzZGM4ZmRjZGU4Mjc4YTBmYmVhZjc3P3VybD1odHRwcyUzQSUyRiUyRmdpdGh1Yi5jb20lMkZ0b3RhbGx5dGltZWRvdXQlMkZnaF9wYWdlcy10dG8uZ2l0?origin=gitlens"
+  },
+  "author": "Caleb Hess @totallytimedout",
+  "license": "ISC"
+}
