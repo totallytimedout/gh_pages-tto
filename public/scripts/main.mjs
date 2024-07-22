@@ -1,4 +1,4 @@
-import projectNavUtil from '..//../modules/projectNavUtil.mjs';
+import projectNavUtil from '../../modules/projectNavUtil.mjs';
 function initProjectNav() {
     const projectNav = new projectNavUtil();
     const projectInstanceElements = document.querySelectorAll('.project[data-project-details]');
