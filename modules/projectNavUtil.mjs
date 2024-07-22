@@ -12,7 +12,13 @@
  */
 export class projectNavUtil {
   /**
-   * @private
+   * Creates a new projectNavUtil instance.
+   * @constructor
+   * @returns {projectNavUtil} - A new projectNavUtil instance
+   */
+  constructor() {}
+  /**
+   * 
    * @property {object} catalog - An object containing an array of project items and methods for navigating the catalog
    *
    * @property {Array} catalog.items - An array of cataloged project items
@@ -172,3 +178,5 @@ export class Project {
     }
   }
 }
+export const projectNav = new projectNavUtil();
+export default { projectNavUtil, Project };

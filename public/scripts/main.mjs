@@ -3,7 +3,7 @@ function initProjectNav() {
    
     const projectInstanceElements = document.querySelectorAll('.project[data-project-details]');
     projectInstanceElements.forEach((item) => {
-        let project = projectNavUtil.projectFromElement(item);
+        let project = Project.projectFromElement(item);
         projectNav.catalog.items.push(project);
         console.log(`${item} added to projectNav.catalog.items`);
     });
@@ -11,4 +11,5 @@ function initProjectNav() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  
 });
