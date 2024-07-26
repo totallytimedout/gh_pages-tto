@@ -1,15 +1,7 @@
-import {projectNav} from '../../modules/projectNavUtil.mjs';
-function initProjectNav() {
-   
-    const projectInstanceElements = document.querySelectorAll('.project[data-project-details]');
-    projectInstanceElements.forEach((item) => {
-        let project = Project.projectFromElement(item);
-        projectNav.catalog.items.push(project);
-        console.log(`${item} added to projectNav.catalog.items`);
-    });
-    return projectNav;
-}
+import { ProjectFactory } from "./ProjectFactory.mjs";
 
-document.addEventListener('DOMContentLoaded', () => {
-  
-});
+const projectInstanceElements = document.querySelectorAll('.project');
+for(const item of projectInstanceElements) {
+    let project = ProjectFactory.projectFromElementData(item);
+    console.log(project);
+}

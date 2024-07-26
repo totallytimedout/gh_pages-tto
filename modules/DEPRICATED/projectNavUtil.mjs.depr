@@ -1,6 +1,9 @@
-/**
+                                                                  /**
  * @author Caleb Hess
  * @version 1.0
+ * @deprecated
+ * @since 2021-07-01
+ * @module projectNavUtil
  * @description A utility class for managing project navigation and cataloging
  */
 
@@ -16,7 +19,7 @@ export class projectNavUtil {
    * @constructor
    * @returns {projectNavUtil} - A new projectNavUtil instance
    */
-  constructor() {}
+  constructor() { }
   /**
    * 
    * @property {object} catalog - An object containing an array of project items and methods for navigating the catalog
@@ -52,7 +55,7 @@ export class projectNavUtil {
   set catalog(array) {
     if (Array.isArray(array)) {
       array.forEach((item) => {
-        if (item instanceof Project) {
+        if (item instanceof ProjectFactory ) {
           this.catalog.items.push(item);
         } else {
           console.error(
@@ -73,7 +76,7 @@ export class projectNavUtil {
 /**
  * Represents a project.
  */
-export class Project {
+export class ProjectFactory  {
   /**
    * @private - An array of project details for validation of parameters
    * @type {string[]}
@@ -88,21 +91,19 @@ export class Project {
 
   /**
    * Creates a new Project object from the provided element if it has the required data attributes.
-   * @method projectFromElement
+   * @method FromElement
    * @param {HTMLElement} element - The element containing the project details
-   * @returns {Project} - A new Project object
+   * @returns {ProjectFactory } - A new Project object
    */
-  static projectFromElement(element) {
+  static FromElement(element) {
     if (
-      element instanceof HTMLElement &&
-      element.hasAttribute("data-project-details")
-    ) {
+      typeof element === typeof HTMLElement && element.hasAttribute("data-project-details")) {
       let details = JSON.parse(element.getAttribute("data-project-details"));
       if (!details.img && element.innerHTML.contains("<img")) {
         let img = element.querySelector("img");
         details.img = img.src;
       }
-      return new Project(
+      return new ProjectFactory (
         details.label,
         details.title,
         details.description,
@@ -122,7 +123,7 @@ export class Project {
    * @param {String} url - The URL of the project
    * @param {String} img - The URL of the project image
    * @param {Array} tags - An array of tags for the project
-   * @returns {Project} - A new Project object instance
+   * @returns {ProjectFactory } - A new Project object instance
    */
   constructor(label, title, description, url, img, tags) {
     this.label = [label || `new-project${this.#projectCounter}`];
@@ -179,4 +180,4 @@ export class Project {
   }
 }
 export const projectNav = new projectNavUtil();
-export default { projectNavUtil, Project };
+export default { projectNav, ProjectFactory : Project, projectNavUtil };
